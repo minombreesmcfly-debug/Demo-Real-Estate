@@ -12,8 +12,8 @@ export default function HomeTourHero({ coverText, onStartTour }: HomeTourHeroPro
   const textToShow = coverText || "Residencia Atlántida";
 
   return (
-    <section className="relative min-h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden p-4 md:p-8">
-      <div className="absolute inset-0 bg-dark-bg rounded-2xl md:rounded-3xl m-2 md:m-8 overflow-hidden border border-white/5 shadow-2xl">
+    <section className="relative min-h-[60vh] sm:min-h-[70vh] md:h-[80vh] flex items-center justify-center overflow-hidden p-2 sm:p-4 md:p-8">
+      <div className="absolute inset-0 bg-dark-bg rounded-xl sm:rounded-2xl md:rounded-3xl m-1 sm:m-2 md:m-8 overflow-hidden border border-white/5 shadow-2xl">
         <img 
           src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
           className="w-full h-full object-cover opacity-50 md:opacity-40 transition-transform duration-1000 hover:scale-105"
@@ -22,45 +22,45 @@ export default function HomeTourHero({ coverText, onStartTour }: HomeTourHeroPro
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent" />
         
-        <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-20">
+        <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-8 md:p-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-4 md:space-y-6 max-w-3xl"
+            className="space-y-3 sm:space-y-6 max-w-3xl"
           >
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1.5">
               <div className="flex items-center gap-2 text-primary">
                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 <span className="text-[8px] md:text-[10px] font-bold uppercase tracking-[0.3em]">{t('heroImmersive')}</span>
               </div>
               {textToShow.toLowerCase().includes('portada') && (
-                <span className="bg-primary/20 backdrop-blur-md rounded border border-primary/40 text-primary py-1.5 px-3 uppercase tracking-widest text-[8px] md:text-[9px] font-black self-start">
+                <span className="bg-primary/20 backdrop-blur-md rounded border border-primary/40 text-primary py-1 px-2.5 uppercase tracking-widest text-[8px] md:text-[9px] font-black self-start">
                   ✦ Aquí iría la portada de tu inmobiliaria
                 </span>
               )}
             </div>
             
-            <h2 className="text-4xl md:text-8xl font-serif italic tracking-tight leading-tight text-white drop-shadow-2xl uppercase">
+            <h2 className="text-2xl sm:text-5xl md:text-8xl font-serif italic tracking-tight leading-tight text-white drop-shadow-2xl uppercase">
               {textToShow}
             </h2>
             
-            <p className="text-sm md:text-lg text-white/50 max-w-md font-light leading-relaxed">
+            <p className="text-xs sm:text-lg text-white/50 max-w-md font-light leading-relaxed">
               {t('heroDesc')}
             </p>
             
             {/* Relative buttons wrapper with absolute sketched annotations */}
-            <div className="relative flex flex-col sm:flex-row gap-3 md:gap-4 pt-4 pb-16 sm:pb-0 items-start">
+            <div className="relative flex flex-col sm:flex-row gap-2.5 md:gap-4 pt-3 pb-16 sm:pb-0 items-start">
               <button 
                 onClick={onStartTour}
-                className="w-full sm:w-auto px-8 md:px-10 py-4 bg-primary text-black font-black text-[10px] uppercase tracking-widest hover:bg-white transition-all shadow-xl flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full sm:w-auto px-6 sm:px-10 py-3 sm:py-4 bg-primary text-black font-black text-[10px] uppercase tracking-widest hover:bg-white transition-all shadow-xl flex items-center justify-center gap-2 cursor-pointer"
               >
-                <Play className="w-4 h-4 fill-current" />
+                <Play className="w-3.5 h-3.5 fill-current" />
                 {t('btnStartTour')}
               </button>
               <button 
                 onClick={onStartTour}
-                className="w-full sm:w-auto px-8 md:px-10 py-4 bg-white/5 backdrop-blur-md border border-white/10 text-white font-black text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all cursor-pointer"
+                className="w-full sm:w-auto px-6 sm:px-10 py-3 sm:py-4 bg-white/5 backdrop-blur-md border border-white/10 text-white font-black text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all cursor-pointer"
               >
                 {t('btnGallery')}
               </button>
@@ -83,9 +83,9 @@ export default function HomeTourHero({ coverText, onStartTour }: HomeTourHeroPro
           </motion.div>
         </div>
 
-        <div className="absolute top-6 right-6 md:top-12 md:right-12">
-          <div className="glass-dark px-4 py-2 md:px-6 md:py-3 rounded-full border border-white/10">
-            <span className="text-lg md:text-2xl font-serif italic text-white">$1.8M USD</span>
+        <div className="absolute top-4 right-4 sm:top-6 sm:right-6 md:top-12 md:right-12">
+          <div className="glass-dark px-3 py-1.5 sm:px-6 sm:py-3 rounded-full border border-white/10">
+            <span className="text-xs sm:text-2xl font-serif italic text-white">$1.8M USD</span>
           </div>
         </div>
       </div>
