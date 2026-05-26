@@ -1,0 +1,46 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+    
+    function incoming() {
+      return request.resource.data;
+    }
+    
+    function existing() {
+      return resource.data;
+    }
+
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Properties: Publicly readable and fully manageable for interactive demo
+    match /properties/{propertyId} {
+      allow read, write: if true;
+    }
+
+    // Bookings: Open for leads tracking and state toggles in the agent dashboard
+    match /bookings/{bookingId} {
+      allow read, write: if true;
+    }
+
+    // Agents: Allow registering profiles, profile updates, and listing agents
+    match /agents/{agentId} {
+      allow read, write: if true;
+    }
+
+    // Settings: Dynamic color customization, social links, and banners
+    match /settings/{settingId} {
+      allow read, write: if true;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "entities": {
+    "Property": {
+      "title": "Property",
+      "description": "Real estate property listing",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "price": { "type": "number" },
+        "location": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "videoUrl": { "type": "string" },
+        "features": { "type": "array" },
+        "isPinned": { "type": "boolean" },
+        "agentId": { "type": "string" },
+        "agentName": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["title", "description", "price", "location", "imageUrl", "features"]
+    },
+    "Booking": {
+      "title": "Booking",
+      "description": "Property visit request or lead",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "propertyId": { "type": "string" },
+        "propertyName": { "type": "string" },
+        "userName": { "type": "string" },
+        "userEmail": { "type": "string" },
+        "userPhone": { "type": "string" },
+        "dateTime": { "type": "string" },
+        "status": { "type": "string", "enum": ["Pendiente", "Contactado", "Visto", "Cancelado"] },
+        "agentId": { "type": "string" },
+        "agentName": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["propertyId", "propertyName", "userName", "userEmail", "userPhone", "dateTime", "status"]
+    },
+    "Agent": {
+      "title": "Agent",
+      "description": "Real estate agent profile",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "photoUrl": { "type": "string" },
+        "zone": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["name", "email", "phone"]
+    },
+    "Setting": {
+      "title": "Setting",
+      "description": "Customizable visual and contact settings for the demo",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "primaryColor": { "type": "string" },
+        "coverText": { "type": "string" },
+        "contactPhone": { "type": "string" },
+        "contactEmail": { "type": "string" },
+        "instagramUrl": { "type": "string" },
+        "twitterUrl": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "properties": {
+      "schema": "Property",
+      "description": "Luxurious properties listings"
+    },
+    "bookings": {
+      "schema": "Booking",
+      "description": "Client visit requests and sales pipeline leads"
+    },
+    "agents": {
+      "schema": "Agent",
+      "description": "Real estate company agents list"
+    },
+    "settings": {
+      "schema": "Setting",
+      "description": "Dynamic custom colors, social contacts, and custom hero covers info"
+    }
+  }
+}

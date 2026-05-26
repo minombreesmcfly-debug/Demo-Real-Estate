@@ -1,0 +1,8 @@
+{
+  "name": "Demo Bienes Raíces",
+  "description": "Plataforma inmobiliaria moderna, futurista y minimalista para mostrar propiedades, agendar tours y conectar vía WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
