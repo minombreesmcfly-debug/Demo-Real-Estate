@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { 
-  collection, getDocs, addDoc, serverTimestamp, 
+  db, collection, getDocs, addDoc, serverTimestamp, 
   onSnapshot, query, orderBy, doc, setDoc 
-} from 'firebase/firestore';
-import { db } from './lib/firebase';
+} from './lib/firebase';
 import AnnouncementBar from './components/AnnouncementBar';
 import Navbar from './components/Navbar';
 import HomeTourHero from './components/HomeTourHero';

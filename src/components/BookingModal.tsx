@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Calendar, Clock, User, Phone, Mail, Loader2, CheckCircle2 } from 'lucide-react';
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
-import { db } from '../lib/firebase';
+import { db, addDoc, collection, serverTimestamp } from '../lib/firebase';
 import type { Property } from '../types';
 import { useLanguage } from '../lib/LanguageContext';
 

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { collection, onSnapshot, query, orderBy, limit } from 'firebase/firestore';
-import { db } from '../lib/firebase';
+import { db, collection, onSnapshot, query, orderBy, limit } from '../lib/firebase';
 import type { Property } from '../types';
 import PropertyCard from './PropertyCard';
 import { motion, AnimatePresence } from 'motion/react';

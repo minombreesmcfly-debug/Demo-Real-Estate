@@ -7,10 +7,9 @@ import {
   MessageCircle, Star, UserPlus
 } from 'lucide-react';
 import { 
-  collection, getDocs, addDoc, updateDoc, doc, 
+  db, collection, getDocs, addDoc, updateDoc, doc, 
   onSnapshot, query, orderBy, getDoc, setDoc 
-} from 'firebase/firestore';
-import { db } from '../lib/firebase';
+} from '../lib/firebase';
 import type { Property, Booking, Agent, DemoSettings } from '../types';
 import { useLanguage } from '../lib/LanguageContext';
 

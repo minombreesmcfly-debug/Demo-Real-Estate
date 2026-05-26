@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ImagePlus, Loader2, CheckCircle2, DollarSign, MapPin, Type, AlignLeft } from 'lucide-react';
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
-import { db } from '../lib/firebase';
+import { db, addDoc, collection, serverTimestamp } from '../lib/firebase';
 
 interface UploadModalProps {
   onClose: () => void;
